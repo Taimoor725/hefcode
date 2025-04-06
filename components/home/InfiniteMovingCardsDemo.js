@@ -6,7 +6,7 @@ import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 export function InfiniteMovingCardsDemo() {
   return (
     <div
-      className="h-[30rem] _bg-[red] rounded-md flex flex-col antialiased _bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      className="h-[30rem] _bg-[red] rounded-md z-10 flex flex-col antialiased _bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <InfiniteMovingCards items={testimonials} direction="right" speed="fast" />
     </div>
   );

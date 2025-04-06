@@ -6,16 +6,21 @@ import RotatingCards from '@/components/home/RotatingCards'
 import React from 'react'
 
 import CardsPage from '@/components/home/CardsPage'
+import Facts from '@/components/home/Facts'
+import TestimonialSlider from '@/components/home/TestimonialSlider'
+import Footer from '@/components/common/Footer'
 
 function page() {
     return (
         <div className='overflow-hidden'>
-            <Navbar />
             <Landing />
             <InfiniteMovingCardsDemo />
             <RotatingCards />
             <Details />
             <CardsPage/>
+            <Facts/>
+            <TestimonialSlider/>
+            {/* <Footer/> */}
         </div>
     )
 }
@@ -31,7 +36,7 @@ export default page
 
 const Details = () => {
     return (
-        <div className='w-screen h-[40vh] flex flex-col justify-center items-center gap-5'>
+        <div className='w-screen h-[40vh] flex flex-col justify-center items-center gap-5 z-10'>
             <div className='text-6xl font-bold'>
                 Our suite of intelligent products
             </div>

@@ -1,56 +1,86 @@
-"use client"
-import Button from "../common/Button"
-import Image from "next/image"
+"use client";
+import Button from "../common/Button";
+import Image from "next/image";
 
 const CardsPage = () => {
   return (
-    <div className='w-screen h-screen flex justify-center items-center gap-10'>
-      {services.map((items, index) => {
-        return (
-          <Card
-            key={index} // Add key prop for proper reconciliation in React
-            title={items.title}
-            imgSrc={items.imgSrc}
-            description={items.description}
-          />
-        )
-      })}
+    <div className="w-screen h-auto flex justify-center bg-[#F3F7FE] p-20 items-center z-10">
+      <div className="w-4/5 h-[150vh] rounded-3xl  bg-white  flex">
+        {/* Left Side */}
+        <div className="w-[40%] h-full flex flex-col py-20 px-10">
+          <div className="text-xl font-semibold text-[#29DD87]">The Process</div>
+          <div className="text-7xl font-bold">
+            Transform
+            <br />
+            your marketing
+          </div>
+        </div>
+
+        {/* Right Side */}
+        <div className="w-[60%] flex flex-col gap-6 pb-10 px-10">
+          {services.map((item, index) => (
+            <Card key={index} item={item} index={index}/>
+          ))}
+        </div>
+      </div>
     </div>
-  )
-}
-export default CardsPage
+  );
+};
+
+export default CardsPage;
 
 const services = [
   {
-    title: "SERVICES",
-    description: "At Hefcode we have the option to install the tool in our server. We will manage the hosting and provide dedicated support for your company. No development time. We just install the needed tool and you can use it.",
-    imgSrc: "/home/img2.jpg"
+    title: "Create your strategy",
+    description:
+      "Our strategy generator will identify which marketing channels are most effective for your business and provide reasoning behind the selection.",
+    tag: "Start right now, it only takes a few minutes!",
+    imgSrc: "/home/gifs/blog.gif",
+    btnText: "Generate Strategy",
   },
   {
-    description: "The products are installed directly in your infrastructure and it's prepared to be maintained by your company.",
-    title: "PRODUCTS",
-    imgSrc: "/home/img3.jpg"
+    title: "Explore our services",
+    description:
+      "Implementing a full-scale marketing strategy can be a time-intensive process. Let us take the burden off your shoulders! Our comprehensive services cover every aspect of marketing from A to Z.",
+    tag: "Simply browse through our offerings and select the services that best suit your business needs.",
+    imgSrc: "/home/gifs/blog-noise.gif",
+    btnText: "Our Services",
   },
   {
-    title: "CUSTOMIZE SOLUTION",
-    description: "If you need hosting and a dedicated solution for your issue, we take your problem and provide a creative, secure, cost-efficient, and automated solution.",
-    imgSrc: "/home/img1.jpg"
-  }
+    title: "Talk to us",
+    description:
+      "Discover the full depth of hefcode and schedule a call with us today. We'll discuss your needs and find the perfect solution for you. During the call, we'll also guide you through our platform, which streamlines collaboration and puts you in full control of your project.",
+    tag: "Let's take your marketing to the next level!",
+    imgSrc: "/home/gifs/abc.gif",
+    btnText: "Book a Call",
+  },
 ];
 
-const Card = ({ title, imgSrc, description }) => {
+const Card = ({ item ,index}) => {
   return (
-    <div className='w-[30rem] h-[45rem] flex flex-col bg-[#F1F2F4] rounded-2xl mt-20'>
-      <div className='w-full h-1/2'>
-        <Image src={imgSrc} width={400} height={400} className='w-full h-full object-cover rounded-t-2xl' />
+    <div className={`w-full h-[30rem] flex items-center  ${index != 2 ? "border-b border-[#29DD87]":"" }`}>
+      {/* Image Section */}
+      <div className="w-[9rem] h-[9rem] -translate-y-20 flex justify-center items-start">
+        <Image
+          src={item.imgSrc}
+          width={400}
+          height={400}
+          alt={item.title}
+          className="w-full h-full object-cover rounded-xl"
+        />
       </div>
-      <div className='flex flex-col w-full h-1/2 p-4 gap-3'>
-        <div className='font-bold text-4xl h-[3rem]'>{title}</div>
-        <div className="w-full bg-white h-[4px]"></div>
-        <div className='font-normal text-lg h-[9rem]'>{description}</div>
-        <div className="w-full bg-white h-[3px]"></div>
-        <Button text={"Read More"} iconbgcolor={"bg-[#28DC86]"} className={"w-1/2 border-[#28DC86] py-4 border-2 rounded-2xl cursor-pointer font-bold"} />
+
+      {/* Content Section */}
+      <div className="flex flex-col w-full h-auto px-6  gap-3">
+        <div className="font-bold text-4xl flex"><span>{index+1}.</span>{item.title}</div>
+        <div className="font-normal text-xl">{item.description}</div>
+        <div className="mt-4">{item.tag}</div>
+        <Button
+          text={item.btnText}
+          iconbgcolor={"bg-[#28DC86]"}
+          className="w-1/3 border-[#1E225F] py-5 border-2 rounded-full cursor-pointer font-bold"
+        />
       </div>
     </div>
-  )
-}
+  );
+};

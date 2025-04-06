@@ -42,13 +42,13 @@ function RotatingCards() {
     }, []);
 
     return (
-        <div className="w-screen h-[60vh] relative">
-            <Image src={"/home/cards/centerimg.webp"} width={400} height={400} className="w-24 h-24 object-cover absolute left-1/2 bottom-10 -translate-x-1/2"/>
-            <div className="w-[200rem] h-[200rem] absolute -bottom-[270vh] left-1/2 -translate-x-1/2 flex justify-center items-center">
+        <div className="w-screen h-[60vh] relative z-0">
+            <Image src={"/home/cards/centerimg.webp"} width={400} height={400} alt="cards" className="w-24 h-24 object-cover absolute left-1/2 bottom-10 -translate-x-1/2"/>
+            <div className="w-[200rem] h-[200rem] absolute -bottom-[270vh] left-1/2 -translate-x-1/2 flex justify-center items-center z-0">
                 <div ref={circleRef} className="text-color w-full h-full rounded-full border-dotted border-2 relative">
                     
                     <div
-                        className="w-40 h-40 rounded-full bg-[#F3F4F6] p-4 absolute top-1/2 -translate-y-[40%] flex justify-center items-center transition-all duration-300 ease-in-out rotate-[105deg]"
+                        className="w-40 h-40 rounded-full bg-[#f3f7fe] p-4 absolute top-1/2 -translate-y-[40%] flex justify-center items-center transition-all duration-300 ease-in-out rotate-[105deg]"
                         style={{
                             right: isHoveredPink ? "-200px" : "-5rem",
                             width: isHoveredPink ? "500px" : "160px",
@@ -73,7 +73,7 @@ function RotatingCards() {
                     </div>
 
                     <div
-                        className="w-40 h-40 flex bg-[#F3F4F6] justify-center items-center p-4 rounded-full absolute top-1/2 translate-y-[230%] transition-all duration-300 ease-in-out -rotate-[255deg]"
+                        className="w-40 h-40 flex bg-[#f3f7fe] justify-center items-center p-4 rounded-full absolute top-1/2 translate-y-[230%] transition-all duration-300 ease-in-out -rotate-[255deg]"
                         style={{
                             right: isHoveredBlue ? "-200px" : "-1.5rem",
                             width: isHoveredBlue ? "500px" : "160px",
@@ -98,7 +98,7 @@ function RotatingCards() {
                     </div>
 
                     <div
-                        className="w-40 h-40 bg-[#F3F4F6] flex justify-center items-center p-4 rounded-full absolute top-1/2 translate-y-[470%] transition-all duration-300 ease-in-out rotate-[105deg] z-10"
+                        className="w-40 h-40 bg-[#f3f7fe] flex justify-center items-center p-4 rounded-full absolute top-1/2 translate-y-[470%] transition-all duration-300 ease-in-out rotate-[105deg] z-10"
                         style={{
                             right: isHoveredYellow ? "0rem" : "10rem",
                             width: isHoveredYellow ? "500px" : "160px",
