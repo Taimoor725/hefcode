@@ -34,8 +34,8 @@ export default function Navbar() {
         <Link href="/product/" className=" hover:text-[#28dc86]">
           Catalog
         </Link>
-        <Link href="/pricing/" className=" hover:text-[#28dc86]">
-          Pricing
+        <Link href="#about" className=" hover:text-[#28dc86]">
+            About Us
         </Link>
         <Link href="#" className=" hover:text-[#28dc86]" onClick={handleResourcesClick}>
           Resources
@@ -84,9 +84,9 @@ export default function Navbar() {
           <Link href="#" className="hover:text-[#28dc86]">
             Products
           </Link>
-          <Link href="#" className="hover:text-[#28dc86]">
+          {/* <Link href="#" className="hover:text-[#28dc86]">
             Pricing
-          </Link>
+          </Link> */}
           <Link href="#" className="hover:text-[#28dc86]">
             Services
           </Link>

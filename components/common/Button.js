@@ -49,12 +49,12 @@ function Button({ text, className, iconbgcolor }) {
 
   return (
     <div
-      className={`flex justify-center items-center relative overflow-hidden ${className}`}
+      className={`flex justify-center items-center relative overflow-hidden cursor-pointer ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {text}
-      {isHovered && (
+      {/* {isHovered && (
         <div
           ref={arrowRef}
           className={`w-[6rem] h-[6rem] rounded-full ${iconbgcolor} flex justify-center items-center absolute`}
@@ -65,7 +65,7 @@ function Button({ text, className, iconbgcolor }) {
         >
           <FaArrowRight className="w-6 h-6 text-white" />
         </div>
-      )}
+      )} */}
     </div>
   );
 }
